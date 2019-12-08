@@ -1,0 +1,9 @@
+﻿<Application x:Class="NotesApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NotesApp"
+             StartupUri="View/NotesWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

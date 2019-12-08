@@ -1,0 +1,56 @@
+﻿<Window x:Class="NotesApp.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotesApp.View"
+        xmlns:vm="clr-namespace:NotesApp.ViewModel"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="300" Width="300">
+
+    <Window.Resources>
+        <vm:LoginVM x:Key="login"/>
+    </Window.Resources>
+    
+    <Grid x:Name="containerGrid">
+        <StackPanel x:Name="loginStackPanel"
+                    Margin="20, 0"
+                    VerticalAlignment="Center">
+            <TextBox Text="{Binding User.Username, Mode=TwoWay}"/>
+            <TextBox Text="{Binding User.Password, Mode=TwoWay}"
+                     Margin="0 5 0 0"/>
+            <Button Margin="0 5 0 0"
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding User}"
+                    Content="Login"/>
+            <Button x:Name="noAccountButton"
+                    Margin="0 5 0 0"
+                    Content="I don't have an account"
+                    HorizontalAlignment="Right"
+                    Click="noAccountButton_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="registerStackPanel"
+                    Visibility="Collapsed"
+                    Margin="20, 0"
+                    VerticalAlignment="Center">
+            <TextBox Text="{Binding User.Username, Mode=TwoWay}"/>
+            <TextBox Text="{Binding User.Email, Mode=TwoWay}"
+                     Margin="0 5 0 0"/>
+            <TextBox Text="{Binding User.Name, Mode=TwoWay}"
+                     Margin="0 5 0 0"/>
+            <TextBox Text="{Binding User.Lastname, Mode=TwoWay}"
+                     Margin="0 5 0 0"/>
+            <TextBox Text="{Binding User.Password, Mode=TwoWay}"
+                     Margin="0 5 0 0"/>
+            <Button Margin="0 5 0 0"
+                    Command="{Binding RegisterCommand}"
+                    CommandParameter="{Binding User}"
+                    Content="Register"/>
+            <Button x:Name="haveAccountButton"
+                    Content="I have an account"
+                    HorizontalAlignment="Right"
+                    Margin="0 5 0 0"
+                    Click="haveAccountButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
